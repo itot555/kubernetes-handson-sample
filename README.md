@@ -9,6 +9,8 @@ kubernetes handson sample document
 
 ## Usage
 
+## Handson-step
+
 - Deploy Pod
 
   `$ kubectl apply -f 01-pod.yml`
@@ -32,7 +34,27 @@ kubernetes handson sample document
 - Delete pod
 
   `$ kubectl delete -f 01-pod.yml`
+  
+- Deploy ReplicaSet
 
-## Handson-step
+  `$ kubectl apply -f 02-replicaset.yml`
+  
+  - check status
+  
+    `$ kubectl get pods`
+    
+    `$ kubectl get rs -o wide`
+  
+  - check pod self healing function
+  
+    `$ kubectl delete pod spse-rs-....`
+    
+    `$ kubectl get pod -o wide`
+    
+    `$ kubectl describe rs spse-rs`
+ 
+ - Delete RelicaSet
+ 
+   `$ kubectl delete -f 02-replicaset.yml`
 
 ## Clean-Up
