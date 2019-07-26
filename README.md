@@ -60,5 +60,37 @@ kubernetes handson sample document
  - Delete RelicaSet
  
    `$ kubectl delete -f 02-replicaset.yml`
+   
+- Deploy Deployment
+
+  `$ kubectl apply -f 03-deployment.yml --record`
+  
+  - check status
+  
+    `$ kubectl get deployments -o wide`
+    
+    `$ kubectl get replicaset -o wide`
+    
+    `$ kubectl get po -o wide`
+    
+- Update image
+
+  `$ kubectl set image deployment spse-deployment ....`
+  
+  - check status
+  
+    `$ kubectl rollout status deployment spse-deployment`
+  
+    `$ kubectl get deployments`
+    
+    `$ kubectl get rs`
+    
+    `$ kubectl describe rs spse-deployment-...`
+    
+    `$ kubectl get po -o wide`
+
+- Delete Deployment
+
+  `$ kubectl delete -f 03-deployment.yml`
 
 ## Clean-Up
