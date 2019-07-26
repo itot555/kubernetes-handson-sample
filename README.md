@@ -4,6 +4,10 @@ kubernetes handson sample document
 ## Description
 
 ## Requirement
+- WSL
+- Visual Studio Code
+- git
+- Google Cloud SDK
 
 ## Preparation
 
