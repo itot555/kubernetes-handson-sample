@@ -7,7 +7,7 @@ sleep 60
 gcloud compute networks list |grep k8s
 
 gcloud compute networks subnets create k8s-handson-subnet \
- --network=kubernetes-handson \
+ --network=k8s-handson \
  --range=192.168.0.0/24 \
  --region=asia-northeast1
 
