@@ -1,5 +1,5 @@
 #!/bin/bash
-gcloud compue instances create "steplinux" \
+gcloud compute instances create "steplinux" \
  --image-family "ubuntu-1804-lts" \
  --image-project "ubuntu-os-cloud" \
  --boot-disk-size "30" \
