@@ -22,6 +22,13 @@ gcloud compute firewall-rules create allow-ssh-steplinux \
  --target-tags k8s-handson-steplinux \
  --rules tcp:22
 
+gcloud compute firewall-rules create allow-concourse-web \
+ --network k8s-handson \
+ --direction ingress \
+ --action allow \
+ --target-tags k8s-handson-steplinux \
+ --rules tcp:8080
+
 sleep 10
 
 gcloud compute firewall-rules list |grep k8s
