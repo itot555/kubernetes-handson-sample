@@ -13,7 +13,7 @@ kubernetes handson sample document
 
 ## Usage
 
-## Handson-step
+## Setup k8s-Handson-environment
 - Set up GCP environment
 
   `$ ./create-k8s-handson-network.sh`
@@ -63,6 +63,8 @@ kubernetes handson sample document
   `$ kubectl cluster-info`
   
   `$ kubectl get all --all-namespaces`
+
+## k8s-Handson
 
 - Deploy Pod
 
@@ -142,4 +144,41 @@ kubernetes handson sample document
 
   `$ kubectl delete -f 03-deployment.yml`
 
+## Setup concourse-docker-environment
+- [Get Docker Engine - Community for Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository)
+
+- [Install Docker Compose](https://docs.docker.com/compose/install/)
+
+- Setup concourse-docker
+
+  `$ cd workspace`
+  
+  `$ git clone https://github.com/concourse/concourse-docker.git`
+  
+  `$ concourse-docker/ssh`
+  
+  `$ ./generate`
+  
+  `$ cd ..`
+  
+- Modify docker-compose.yml
+
+- docker-compose up
+
+  `$ docker-compose up -d`
+  
+  `$ docker-compose ps`
+
+
 ## Clean-Up
+- Delete GKE cluster
+
+  `$ ./delete-sample-gke-cluster.sh`
+  
+- Delete GCP instance
+
+  `$ ./delete-k8s-handson-steplinux.sh`
+  
+- Delete GCP network
+
+  `$ ./delete-k8s-handson-network.sh`
